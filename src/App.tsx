@@ -47,6 +47,7 @@ const App = () => {
 						start: 'top 80%',
 						end: 'bottom 20%',
 						scrub: true,
+						// stagger: 0.3,
 					},
 				}
 			);
