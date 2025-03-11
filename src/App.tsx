@@ -7,18 +7,11 @@ import { useRef } from 'react';
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
-	const galleryLeftRef = useRef(null);
-	const galleryRightRef = useRef(null);
+	const galleryLeftRef = useRef<HTMLDivElement>(null);
+	const galleryRightRef = useRef<HTMLDivElement>(null);
 
 	useGSAP(() => {
 		const tl = gsap.timeline();
-		// if (ScrollTrigger.isTouch !== 1) {
-		// 	ScrollSmoother.create({
-		// 		wrapper: '.wrapper',
-		// 		content: '.content',
-		// 		smooth: 1.5,
-		// 		effects: true,
-		// 	});
 
 		gsap.fromTo(
 			'.hero-section',
@@ -34,43 +27,53 @@ const App = () => {
 			}
 		);
 
-		let itemsL = gsap.utils.toArray(galleryLeftRef.current.children);
-		itemsL.forEach((item) => {
-			tl.fromTo(
-				item,
-				{ opacity: 0, x: -150 },
-				{
-					opacity: 1,
-					x: 0,
-					scrollTrigger: {
-						trigger: item,
-						start: 'top 80%',
-						end: 'bottom 20%',
-						scrub: true,
-						// stagger: 0.3,
-					},
-				}
-			);
-		});
+		// Анимация левой галереи
+		if (galleryLeftRef.current) {
+			let itemsL = gsap.utils.toArray(
+				galleryLeftRef.current.children
+			) as HTMLElement[];
 
-		let itemsR = gsap.utils.toArray(galleryRightRef.current.children);
-		itemsR.forEach((item) => {
-			tl.fromTo(
-				item,
-				{ opacity: 0, x: 150 },
-				{
-					opacity: 1,
-					x: 0,
-					scrollTrigger: {
-						trigger: item,
-						start: 'top 80%',
-						end: 'bottom 20%',
-						scrub: true,
-					},
-				}
-			);
-		});
-		// }
+			itemsL.forEach((item) => {
+				tl.fromTo(
+					item,
+					{ opacity: 0, x: -150 },
+					{
+						opacity: 1,
+						x: 0,
+						scrollTrigger: {
+							trigger: item,
+							start: 'top 80%',
+							end: 'bottom 20%',
+							scrub: true,
+						},
+					}
+				);
+			});
+		}
+
+		// Анимация правой галереи
+		if (galleryRightRef.current) {
+			let itemsR = gsap.utils.toArray(
+				galleryRightRef.current.children
+			) as HTMLElement[];
+
+			itemsR.forEach((item) => {
+				tl.fromTo(
+					item,
+					{ opacity: 0, x: 150 },
+					{
+						opacity: 1,
+						x: 0,
+						scrollTrigger: {
+							trigger: item,
+							start: 'top 80%',
+							end: 'bottom 20%',
+							scrub: true,
+						},
+					}
+				);
+			});
+		}
 	}, []);
 
 	return (
