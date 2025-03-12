@@ -1,54 +1,50 @@
-# React + TypeScript + Vite
+# 🎨 Creative Scroll – Демонстрация анимации GSAP  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 🚀 Демо-версия: https://nifontovsv.github.io/creative_scroll/
 
-Currently, two official plugins are available:
+## ✨ Описание проекта  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Creative Scroll** – это одностраничный сайт, демонстрирующий креативные анимации прокрутки с помощью **GSAP**. Проект создан для изучения и визуализации плавных эффектов анимации, интерактивных переходов и динамического взаимодействия с пользователем.  
 
-## Expanding the ESLint configuration
+## 🛠️ Технологии  
+[![React](https://img.shields.io/static/v1?label=&message=React&color=61DAFB&logo=react&logoColor=FFFFFF)](https://react.dev/) [![TypeScript](https://img.shields.io/static/v1?label=&message=TypeScript&color=3178C6&logo=typescript&logoColor=FFFFFF)](https://www.typescriptlang.org/) [![Vite](https://img.shields.io/static/v1?label=&message=Vite&color=646CFF&logo=vite&logoColor=FFFFFF)](https://vitejs.dev/)  [![GSAP](https://img.shields.io/static/v1?label=&message=GSAP&color=88CE02&logo=greensock&logoColor=FFFFFF)](https://greensock.com/gsap/)  [![Tailwind CSS](https://img.shields.io/static/v1?label=&message=TailwindCSS&color=38B2AC&logo=tailwindcss&logoColor=FFFFFF)](https://tailwindcss.com/)  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📌 Используемые библиотеки  
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **GSAP + @gsap/react** – мощные анимации прокрутки  
+- **React + Vite + TypeScript** – быстрая и типизированная разработка  
+- **Tailwind CSS** – удобная стилизация  
+
+## 💡 Особенности  
+
+✅ Плавные и интерактивные анимации с **GSAP**  
+✅ Анимации, зависящие от прокрутки  
+✅ Адаптивный дизайн  
+✅ Оптимизированная производительность с **Vite**  
+✅ Чистый и понятный код  
+
+## 📂 Установка и запуск
+
+1. Клонируйте репозиторий
+
+```bash
+git clone https://github.com/nifontovsv/creative_scroll.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Перейдите в папку с проектом
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+cd creative_scroll
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+3. Подгрузите зависимости
+
+```bash
+npm install
+```
+
+4. Запустите проект
+
+```bash
+npm start
 ```
